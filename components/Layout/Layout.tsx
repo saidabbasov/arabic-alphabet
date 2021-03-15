@@ -1,10 +1,9 @@
 import { FC } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from './Layout.module.scss'
-
-import logo from '~/public/images/logo.png'
 
 interface Layout {
     title?: string
@@ -28,10 +27,18 @@ const Layout: FC<Layout> = ({
                         <div className={ styles.logoText }>Арабский <br /> алфавит</div>
                     </div>
                     <div className={ styles.buttons }>
-                        <a className={ styles.button }>Уроки</a>
-                        <a className={ styles.button }>Алфавит</a>
-                        <a className={ styles.button }>Коран</a>
-                        <a className={ styles.button }>О нас</a>
+                        <Link href="/courses">
+                            <a className={ styles.button }>Уроки</a>
+                        </Link>
+                        <Link href="/alphabet">
+                            <a className={ styles.button }>Алфавит</a>
+                        </Link>
+                        <Link href="/quran">
+                            <a className={ styles.button }>Коран</a>
+                        </Link>
+                        <Link href="/about">
+                            <a className={ styles.button }>О нас</a>
+                        </Link>
                     </div>
                 </div>
                 <div className={ styles.content }>
