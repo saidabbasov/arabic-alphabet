@@ -1,0 +1,81 @@
+@import "styles/mixins/text";
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: Ethna, sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    text-align: center;
+    margin: 0 auto;
+    letter-spacing: 0.04em;
+    color: #77b5fe;
+}
+
+.logo {
+    display: block;
+    margin-top: 56px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: 180px;
+    direction: rtl;
+    padding: 0 94px;
+    color: #606060;
+    font-size: 25px;
+    font-family: PTSerif, serif;
+}
+
+.letter{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+$strokeColor: #6d6d6d;
+
+.letterButton {
+    width: 104px;
+    height: 104px;
+    background: #ffc400;
+    border: 4px solid #fff;
+    border-radius: 50% 50%;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #e6b100;
+    }
+
+    .letterArabic {
+        color: #fff;
+        font-size: 74px;
+        font-family: Arabic, sans-serif;
+        font-weight: 400;
+        text-align: center;
+        line-height: 108px;
+        letter-spacing: 0.05em;
+
+        @include textStroke (1, $strokeColor);
+    }
+
+    .letterTransliteration {
+        direction: ltr;
+        color: #77b5fe;
+        font-family: Smeshariki, sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 41px;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+}
