@@ -53,6 +53,25 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: Smeshariki;
+    src:
+        url(../assets/fonts/Smeshariki/Smeshariki.woff) format("woff"),
+        url(../assets/fonts/Smeshariki/Smeshariki.ttf) format("ttf")
+    ;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Arabic;
+    src:
+        url(../assets/fonts/Arabic/traditional_arabic.woff) format("woff"),
+        url(../assets/fonts/Arabic/traditional_arabic.ttf) format("ttf"),
+    ;
+    font-weight: 400;
+}
+
+
 *,
 *:before,
 *:after {
