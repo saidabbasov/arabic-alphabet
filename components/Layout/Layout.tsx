@@ -5,11 +5,11 @@ import Link from 'next/link'
 
 import styles from './Layout.module.scss'
 
-interface Layout {
+interface LayoutProps {
     title?: string
 }
 
-const Layout: FC<Layout> = ({
+const Layout: FC<LayoutProps> = ({
     children,
     title,
 }) => {
@@ -49,4 +49,4 @@ const Layout: FC<Layout> = ({
     )
 }
 
-export { Layout };
+export { Layout }
