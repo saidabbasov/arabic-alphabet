@@ -1,19 +1,27 @@
-import { Layout } from '~/components';
+import { useState } from 'react'
+import ReactHowler from 'react-howler'
 
-import { letters } from './letters';
+import { Layout } from '~/components'
+import { letters } from './letters'
 
 import styles from './Alphabet.module.scss'
 
 const Alphabet = () => {
+    const [playingLetterAudioPath, setPlayingLetterAudioPath] = useState<string | null>(null)
+
     return (
         <Layout>
             <div className={ styles.header }>
                 <h1 className={ styles.title }>Арабский алфавит</h1>
             </div>
-            <div className={ styles.content }>
+            <div className={ styles.content } dir="rtl">
                 {
                     letters.map(letter => (
-                        <button key={ letter.arabic } className={styles.letter}>
+                        <button
+                            key={ letter.arabic }
+                            className={ styles.letter }
+                            onClick={ () => setPlayingLetterAudioPath(`/audio/letters/${ letter.file }`) }
+                        >
                             <div className={ styles.letterButton }>
                                 <div className={ styles.letterArabic }>{ letter.arabic }</div>
                                 <div className={ styles.letterTransliteration }>{ letter.name }</div>
@@ -22,7 +30,12 @@ const Alphabet = () => {
                     ))
                 }
             </div>
+            {
+                playingLetterAudioPath !== null &&
+                <ReactHowler src={ playingLetterAudioPath } />
+            }
         </Layout>
     )
 }
+
 export { Alphabet }
