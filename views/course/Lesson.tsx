@@ -1,29 +1,27 @@
 import Link from 'next/link'
 
-import styles from "./Lesson.module.scss";
+import { TLesson } from './type'
 
-interface ILesson {
-    orderNumber: number;
-    title: string;
-    subTitle: string;
+import styles from "./Lesson.module.scss"
+
+interface LessonProps {
+    lesson: TLesson
 }
 
-const Lesson: React.FC<ILesson> = ({
-    orderNumber,
-    title,
-    subTitle,
+const Lesson: React.FC<LessonProps> = ({
+    lesson
 }) => {
     return (
-        <Link href="#">
+        <Link href={ `/lesson/${ lesson.code }` }>
             <a className={ styles.block }>
                 <div className={ styles.content }>
                     <div className={ styles.orderNumber }>
-                        { orderNumber }
+                        { lesson.orderNumber }
                     </div>
                     <div className={ styles.description }>
-                        <div className={ styles.title }>{ title }</div>
+                        <div className={ styles.title }>{ lesson.title }</div>
                         <div className={ styles.subTitle }>
-                            { subTitle }
+                            { lesson.subTitle }
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ const Course = () => {
     return (
         <Layout>
             <div className={ styles.courseBlock }>
-                <Link href="/">
+                <Link href="/courses">
                     <a className={ styles.goBack }>
                         <div className={ styles.goBackIcon }>
                             <i>
@@ -36,12 +36,10 @@ const Course = () => {
                     </a>
                 </Link>
                 {
-                    lessons.map(item => (
+                    lessons.map(lesson => (
                         <Lesson
-                            key={ item.orderNumber }
-                            orderNumber={ item.orderNumber }
-                            subTitle={ item.subTitle }
-                            title={ item.title }
+                            key={ lesson.orderNumber }
+                            lesson={ lesson }
                         />
                     ))
                 }
