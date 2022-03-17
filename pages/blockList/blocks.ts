@@ -1,18 +1,20 @@
+import { arabicCharacters } from '~/pages/blockList/arabicCharacters';
+
 export const block = [
     {
-        letterArabic: "I",
+        letterArabic: arabicCharacters.alifK,
         letter: "К",
     },
     {
-        letterArabic: "I",
+        letterArabic: arabicCharacters.alifK,
         letter: "С",
     },
     {
-        letterArabic: "I",
+        letterArabic: arabicCharacters.alif,
         letter: "Н",
     },
     {
-        letterArabic: "I",
+        letterArabic: arabicCharacters.alif,
         letter: "О",
     },
 ]
@@ -22,5 +24,17 @@ export const blockList = [
     {
         blockListLetters: "O",
         letterList: "Обособленный",
+    },
+    {
+        blockListLetters: "Н",
+        letterList: "Начальный",
+    },
+    {
+        blockListLetters: "С",
+        letterList: "Серединный",
+    },
+    {
+        blockListLetters: "К",
+        letterList: "Конечный",
     }
 ]
